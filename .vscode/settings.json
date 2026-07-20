@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    "**/node_modules": true,
+    "dist": true,
+    "package-lock.json": true,
+    "tsconfig.json": true,
+    "tsconfig.app.json": true,
+    "tsconfig.node.json": true,
+    "tsconfig.app.tsbuildinfo": true,
+    "tsconfig.node.tsbuildinfo": true,
+    "vite.config.ts": true,
+    "vite.config.js": true,
+    "vite.config.d.ts": true
+  }
+}
