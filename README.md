@@ -56,11 +56,12 @@ Os links de WhatsApp do projeto estao configurados para o numero do cliente:
 
 ## Favicon
 
-O favicon foi gerado a partir da marca `src/assets/logos/prana-infra.png` e esta disponivel em:
+O favicon foi gerado a partir da marca `src/assets/logos/prana-infra.webp` e esta disponivel em:
 
 - `public/favicon.ico`
 
 ## Observacoes
 
 - As imagens principais estao em WebP para melhor desempenho
+- A imagem de compartilhamento social esta em `public/og-image.webp`
 - O layout foi refinado para desktop e mobile

@@ -1,4 +1,4 @@
-import logo from "../../../assets/logos/prana-infra.png";
+import logo from "../../../assets/logos/prana-infra.webp";
 import {
   Brand,
   Copyright,
