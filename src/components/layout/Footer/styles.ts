@@ -91,7 +91,12 @@ export const FooterBottom = styled.div`
   justify-content: space-between;
   gap: .8rem;
   padding-top: 1rem;
+  padding-bottom: 4.6rem;
   border-top: 1px solid rgba(168, 38, 17, .12);
+
+  @media (min-width: 768px) {
+    padding-bottom: 0;
+  }
 
   a {
     color: #705044;

@@ -17,20 +17,50 @@ export const ServicesGrid = styled.div`
 `
 
 export const ServiceCard = styled.article`
+  position: relative;
+  isolation: isolate;
   overflow: hidden;
-  background: rgba(255, 255, 255, .62);
-  border: 1px solid rgba(168, 38, 17, .16);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .9) 0%, rgba(255, 252, 246, .84) 100%);
+  border: 1px solid rgba(168, 38, 17, .22);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
-  transition: transform .25s ease, box-shadow .25s ease;
+  box-shadow:
+    0 14px 30px rgba(62, 35, 20, .12),
+    inset 0 1px 0 rgba(255, 255, 255, .72);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background:
+      radial-gradient(120% 60% at 0% 0%, rgba(207, 159, 31, .14) 0%, transparent 58%),
+      radial-gradient(90% 80% at 100% 100%, rgba(168, 38, 17, .09) 0%, transparent 62%);
+    opacity: .8;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(255, 255, 255, .48);
+    pointer-events: none;
+  }
 
   &:hover img {
-    transform: scale(1.04);
+    transform: scale(1.07);
   }
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 24px 36px rgba(65, 38, 26, .18);
+    transform: translateY(-7px);
+    border-color: rgba(168, 38, 17, .35);
+    box-shadow:
+      0 28px 44px rgba(65, 38, 26, .2),
+      inset 0 1px 0 rgba(255, 255, 255, .84);
   }
 
   @media (min-width: 760px) {
@@ -42,6 +72,21 @@ export const ServiceCard = styled.article`
 export const ServiceMedia = styled.div`
   aspect-ratio: 4 / 3;
   overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(17, 8, 4, 0) 45%, rgba(17, 8, 4, .34) 100%);
+    opacity: .72;
+    transition: opacity .35s ease;
+    pointer-events: none;
+  }
+
+  ${ServiceCard}:hover &::after {
+    opacity: .5;
+  }
 
   img {
     width: 100%;
@@ -54,13 +99,14 @@ export const ServiceMedia = styled.div`
 export const ServiceBody = styled.div`
   padding: 1.5rem;
   display: grid;
-  gap: .95rem;
+  gap: 1rem;
 
   h3 {
     color: var(--c-red);
     font-size: 1.3rem;
     line-height: 1.2;
     font-weight: 600;
+    margin-bottom: .35rem;
   }
 
   p,
@@ -71,9 +117,27 @@ export const ServiceBody = styled.div`
 
   ul {
     display: grid;
-    gap: .35rem;
-    padding-left: 1.1rem;
+    gap: .45rem;
+    list-style: none;
+    padding-left: 0;
     margin: 0;
+  }
+
+  li {
+    position: relative;
+    padding-left: 1rem;
+  }
+
+  li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: .58em;
+    width: .36rem;
+    height: .36rem;
+    border-radius: 999px;
+    background: var(--c-red);
+    box-shadow: 0 0 0 3px rgba(168, 38, 17, .12);
   }
 `
 
@@ -82,10 +146,16 @@ export const ServiceLink = styled.a`
   align-items: center;
   gap: .45rem;
   color: var(--c-red);
+  width: fit-content;
+  margin-top: .2rem;
+  padding: .5rem .75rem;
   font-weight: 700;
   font-size: .82rem;
   letter-spacing: .05em;
   text-transform: uppercase;
+  border-radius: 999px;
+  background: rgba(168, 38, 17, .08);
+  transition: background .2s ease, color .2s ease;
 
   &::after {
     content: '';
@@ -102,6 +172,11 @@ export const ServiceLink = styled.a`
   &:hover::after {
     transform: translateX(2px);
     opacity: 1;
+  }
+
+  &:hover {
+    background: rgba(168, 38, 17, .14);
+    color: var(--c-red-deep);
   }
 `
 
