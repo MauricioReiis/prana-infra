@@ -113,6 +113,18 @@ export const MapWrapper = styled.div`
   border-radius: var(--radius);
   border: 1px solid rgba(168, 38, 17, .12);
   box-shadow: var(--shadow-card);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 12% 10%, rgba(255, 255, 255, .14), transparent 48%);
+    opacity: .55;
+    pointer-events: none;
+    transition: opacity .3s ease;
+    z-index: 1;
+  }
 
   &::after {
     content: '';
@@ -121,9 +133,28 @@ export const MapWrapper = styled.div`
     border: 1px solid rgba(255, 255, 255, .34);
     border-radius: inherit;
     pointer-events: none;
+    z-index: 2;
   }
 
   img {
     width: 100%;
+    transition: transform .45s ease, filter .45s ease;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-3px);
+      border-color: rgba(168, 38, 17, .26);
+      box-shadow: 0 24px 38px rgba(62, 35, 20, .18);
+    }
+
+    &:hover::before {
+      opacity: .35;
+    }
+
+    &:hover img {
+      transform: scale(1.02);
+      filter: saturate(1.04) contrast(1.03);
+    }
   }
 `

@@ -580,6 +580,18 @@ Error generating stack: `+a.message+`
   border-radius: var(--radius);
   border: 1px solid rgba(168, 38, 17, .12);
   box-shadow: var(--shadow-card);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 12% 10%, rgba(255, 255, 255, .14), transparent 48%);
+    opacity: .55;
+    pointer-events: none;
+    transition: opacity .3s ease;
+    z-index: 1;
+  }
 
   &::after {
     content: '';
@@ -588,10 +600,29 @@ Error generating stack: `+a.message+`
     border: 1px solid rgba(255, 255, 255, .34);
     border-radius: inherit;
     pointer-events: none;
+    z-index: 2;
   }
 
   img {
     width: 100%;
+    transition: transform .45s ease, filter .45s ease;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-3px);
+      border-color: rgba(168, 38, 17, .26);
+      box-shadow: 0 24px 38px rgba(62, 35, 20, .18);
+    }
+
+    &:hover::before {
+      opacity: .35;
+    }
+
+    &:hover img {
+      transform: scale(1.02);
+      filter: saturate(1.04) contrast(1.03);
+    }
   }
 `;function xv(){const i=r=>{if(r==="Alphaville"||r==="Estrela Urbanidade")return"logo-box-black";if(r==="Idealiza Cidades")return"logo-box-idealiza";if(r==="Tamboré Urbanismo")return"logo-box-tambore"};return x.jsx(vv,{id:"atuacao",className:"section",children:x.jsxs(pv,{children:[x.jsxs("div",{children:[x.jsx(Mi,{eyebrow:"Confiança",title:"Atendemos grandes nomes do mercado."}),x.jsx(bv,{children:hv.map(([r,d])=>x.jsx(Sv,{className:i(r),children:x.jsx("img",{src:d,alt:r,loading:"lazy",decoding:"async",className:r==="Pandora Arquitetura"?"logo-pandora":void 0})},r))})]}),x.jsxs(Av,{children:[x.jsx(Mi,{eyebrow:"Presença",title:"Onde já realizamos projetos.",description:"Experiência aplicada em diferentes regiões e contextos de infraestrutura urbana."}),x.jsx(zv,{children:x.jsx("img",{src:gv,alt:"Mapa do Brasil destacando regiões com projetos realizados pela Prana Infra",loading:"lazy",decoding:"async"})})]})]})})}const Ev="/assets/romulo-Bp4ez5Sw.webp",Tv=J.section`
   border-top: 1px solid var(--c-line);
