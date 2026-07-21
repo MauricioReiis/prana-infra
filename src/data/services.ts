@@ -9,14 +9,14 @@ export const services: Service[] = [
     title: 'Projetos de Terraplenagem',
     description: 'Soluções técnicas para equilibrar movimentação de terra, custo executivo e aproveitamento do empreendimento.',
     image: terraplenagem,
-    bullets: ['Modelagem do terreno', 'Cálculo de corte e aterro', 'Otimização de volumes'],
+    bullets: ['Modelo digital do terreno', 'Terraplenagem lote a lote', 'Otimização de corte e aterro', 'Projetos executivos alinhado com método de locação e execução'],
   },
   {
     slug: 'drenagem',
     title: 'Projetos de Drenagem',
     description: 'Dimensionamento seguro e eficiente de sistemas de drenagem para loteamentos, condomínios e áreas urbanizadas.',
     image: drenagem,
-    bullets: ['Redes e dispositivos', 'Dimensionamento hidráulico', 'Compatibilização com o projeto'],
+    bullets: ['Redes de águas pluviais', 'Detalhamento de bueiros e dissipadores', 'Bacias de detenção e infiltração', 'Projeto compatibilizado em BIM'],
   },
   {
     slug: 'compatibilizacao-bim',

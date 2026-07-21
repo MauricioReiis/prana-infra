@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 import Container from '../../ui/Container/Container'
 
+const logoCardBackground = 'white'
+const idealizaDominantBackground = '#00415d'
+const tamboreDominantBackground = '#733f11'
+
 export const Section = styled.section`
   padding-top: 1rem;
   background: linear-gradient(180deg, rgba(255, 250, 241, .45) 0%, rgba(255, 250, 241, 0) 100%);
@@ -32,7 +36,7 @@ export const LogoBox = styled.div`
   display: grid;
   place-items: center;
   padding: 1rem;
-  background: rgba(255, 255, 255, .64);
+  background: ${logoCardBackground};
   border: 1px solid rgba(168, 38, 17, .1);
   border-radius: 12px;
   transition: transform .2s ease, box-shadow .2s ease;
@@ -42,6 +46,36 @@ export const LogoBox = styled.div`
     box-shadow: 0 12px 24px rgba(65, 38, 26, .16);
   }
 
+  &.logo-box-black {
+    background: black;
+  }
+
+  &.logo-box-idealiza {
+    background-color: ${idealizaDominantBackground};
+  }
+
+  &.logo-box-idealiza:hover {
+    background-color: ${idealizaDominantBackground};
+  }
+
+  &.logo-box-tambore {
+    background-color: ${tamboreDominantBackground};
+  }
+
+  &.logo-box-tambore:hover {
+    background-color: ${tamboreDominantBackground};
+  }
+
+  &.logo-box-idealiza img,
+  &.logo-box-tambore img {
+    filter: none;
+  }
+
+  &.logo-box-idealiza:hover img,
+  &.logo-box-tambore:hover img {
+    filter: none;
+  }
+
   img {
     max-width: 130px;
     max-height: 60px;
@@ -49,6 +83,12 @@ export const LogoBox = styled.div`
     height: auto;
     filter: saturate(.85);
     transition: filter .2s ease;
+  }
+
+  img.logo-pandora {
+    max-width: 160px;
+    max-height: 72px;
+    filter: saturate(1) contrast(1.08);
   }
 
   &:hover img {
