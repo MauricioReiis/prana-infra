@@ -12,7 +12,7 @@ import {
 
 export default function ClientsLocations() {
   const getLogoBoxClassName = (name: string) => {
-    if (name === "Alphaville" || name === "Estrela Urbanidade") {
+    if (name === "Estrela Urbanidade") {
       return "logo-box-black";
     }
 

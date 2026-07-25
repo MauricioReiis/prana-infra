@@ -78,7 +78,7 @@ export const LogoBox = styled.div`
 
   img {
     max-width: 130px;
-    max-height: 60px;
+    max-height: 70px;
     width: auto;
     height: auto;
     filter: saturate(.85);
