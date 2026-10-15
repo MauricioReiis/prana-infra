@@ -1,6 +1,6 @@
 import SectionHeading from "../../ui/SectionHeading/SectionHeading";
 import { clients } from "../../../data/clients";
-import map from "../../../assets/images/project-map2.webp";
+import map from "../../../assets/images/project-map.webp";
 import {
   Layout,
   Locations,
